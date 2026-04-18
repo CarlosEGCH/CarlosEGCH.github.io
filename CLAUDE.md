@@ -31,9 +31,15 @@ All design tokens (colors, spacing, fonts, radii) are CSS custom properties on `
 
 The `--density` variable scales section padding; `--accent-intensity` scales glow opacity. Both default to `1`.
 
+### Branch structure
+
+- `main` — source code, merge target for finished work
+- `Rework` — active development branch
+- `gh-pages` — auto-generated built files, served by GitHub Pages (do not edit manually)
+
 ### Deployment
 
-The repo serves as the GitHub Pages source (`CarlosEGCH.github.io`). After `npm run build`, copy the contents of `dist/` to the repo root on the `main` branch and push.
+Deployment is automated via `.github/workflows/deploy.yml`. Merging a PR into `main` triggers the workflow, which builds the site and pushes the output to the `gh-pages` branch. GitHub Pages serves from `gh-pages`.
 
 The CV is served from `public/cv.pdf` → `/cv.pdf` at runtime. Replace this file to update the downloadable CV.
 
