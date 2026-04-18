@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build output (deployed manually to main branch)
+dist/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Env files (none currently, precaution)
+.env
+.env.*
