@@ -1043,3 +1043,46 @@ section {
   .nav-logo .nav-name { display: none; }
   .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
 }
+
+/* Extra-small screens: prevent hero element overlap */
+@media (max-width: 450px) {
+  .hero {
+    padding-top: 80px;        /* extra breathing room below fixed nav */
+    align-items: center;      /* center within the padded space so content isn't glued to the top */
+    padding-bottom: 80px;     /* reserve space for scroll indicator */
+  }
+
+  .hero-left {
+    gap: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 9vw, 44px); /* lower the minimum that caused overflow */
+    margin-bottom: 14px;
+  }
+
+  .hero-kicker {
+    font-size: 11px;
+    padding: 5px 10px 5px 7px;
+    margin-bottom: 14px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .scroll-indicator {
+    bottom: 15px; /* pull up so it never sits on top of action buttons */
+  }
+}
