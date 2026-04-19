@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { GLogoSmall } from '../GLogo'
 import { Icon } from '../icons'
 
 const NAV_ITEMS = [
@@ -37,7 +36,7 @@ export default function Navbar({ activeSection, scrolled, mobileOpen, setMobileO
       <nav className={`nav ${scrolled ? 'scrolled' : ''} ${mobileOpen ? 'menu-open' : ''}`}>
         <div className="container nav-inner">
           <a href="#hero" className="nav-logo" onClick={() => setMobileOpen(false)}>
-            <GLogoSmall size={32} />
+            <img src="/logo.png" width={32} height={32} alt="CG" />
             <span className="nav-name">Carlos Gomes</span>
           </a>
           <div className="nav-links" ref={linksRef}>

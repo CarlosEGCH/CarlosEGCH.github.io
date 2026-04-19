@@ -5,26 +5,27 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero-glow" />
       <div className="container">
-        <div className="hero-left reveal-stagger" style={{ margin: '0px' }}>
+        <div className="hero-left">
           <div className="hero-kicker">
             <span className="dot" />
-            <span>Software Engineer · Madeira, Portugal</span>
+            <span>Software Developer · Madeira, Portugal</span>
           </div>
           <h1>
             Backend-leaning <span className="accent">developer</span>{' '}
             who still loves <span className="accent-purple">the&nbsp;web</span>.
           </h1>
           <p className="hero-tagline">
-            I'm <strong>Carlos Gomes</strong> — three years deep in core banking systems by day,
-            building web projects, side experiments and the occasional game by night.
-            Curious about every new tool that crosses my path.
+            I'm <strong>Carlos Gomes</strong> a <span className="accent">Software 
+            Developer</span> with <span className="accent">three years of experience</span> in core banking systems,
+            who's also into building web projects, side coding experiments and learning new technologies. <br />
+            - Curious about every new tool that crosses my path.
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
               See my work <Icon.ArrowRight />
             </a>
             <a href="#contact" className="btn btn-secondary">
-              Get in touch
+              Contact me
             </a>
           </div>
         </div>
