@@ -1,4 +1,3 @@
-import { GLogoSmall } from '../GLogo'
 import { Icon } from '../icons'
 
 export default function Footer() {
@@ -6,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-logo">
-          <GLogoSmall size={24} />
+          <img src="/logo.png" width={24} height={24} alt="CG" />
           <span>Carlos Gomes</span>
         </div>
         <div className="footer-copy">© 2026 — Designed & built with care.</div>

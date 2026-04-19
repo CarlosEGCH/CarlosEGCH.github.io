@@ -23,7 +23,7 @@ export default function App() {
       const sections = NAV_IDS.map((id) => document.getElementById(id)).filter(Boolean)
       const y = window.scrollY + window.innerHeight * 0.35
       let active = sections[0]?.id
-      sections.forEach((s) => { if (s.offsetTop <= y) active = s.id })
+      sections.forEach((section) => { if (section.offsetTop <= y) active = section.id })
       setActiveSection(active)
     }
     window.addEventListener('scroll', onScroll)
@@ -31,21 +31,22 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Adds .in to .reveal/.reveal-stagger elements as they scroll into view
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal, .reveal-stagger')
+    const elements = document.querySelectorAll('.reveal, .reveal-stagger')
     const vh = window.innerHeight
-    els.forEach((el) => {
-      if (el.getBoundingClientRect().top < vh * 0.95) el.classList.add('in')
+    elements.forEach((element) => {
+      if (element.getBoundingClientRect().top < vh * 0.95) element.classList.add('in')
     })
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target) }
         })
       },
       { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
     )
-    els.forEach((el) => { if (!el.classList.contains('in')) io.observe(el) })
+    elements.forEach((element) => { if (!element.classList.contains('in')) io.observe(element) })
     return () => io.disconnect()
   }, [])
 
