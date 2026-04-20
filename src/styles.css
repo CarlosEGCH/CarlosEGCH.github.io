@@ -278,7 +278,7 @@ section {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--text-muted);
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 }
 .hero-kicker .dot {
   width: 8px; height: 8px; border-radius: 999px;
@@ -291,7 +291,7 @@ section {
   50% { opacity: 0.4; }
 }
 .hero h1 {
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   font-size: clamp(44px, 7.2vw, 84px);
   max-width: 22ch;
   text-wrap: balance;
@@ -1083,6 +1083,29 @@ section {
   }
 
   .scroll-indicator {
-    bottom: 15px; /* pull up so it never sits on top of action buttons */
+    bottom: 16px; /* pull up so it never sits on top of action buttons */
+  }
+}
+
+/* Tighten hero spacing when viewport height is limited (e.g. landscape mobile, small laptop windows)
+   to prevent .hero-kicker from overlapping the fixed navbar */
+@media (max-height: 780px) {
+  .hero-left {
+    margin-top: 0;
+  }
+  .hero-kicker {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 60px);
+    margin-bottom: 10px;
+  }
+  .hero-tagline {
+    font-size: 17px;
+    margin: 0 0 20px;
+  }
+  .scroll-indicator {
+    bottom: 16px; /* pull up so it never sits on top of action buttons */
   }
 }
