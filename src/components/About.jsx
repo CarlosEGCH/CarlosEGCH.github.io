@@ -9,13 +9,13 @@ export default function About() {
         <div className="about-grid">
           <div className="about-text reveal">
             <p>
-              I'm a software engineer based in Madeira, currently focused on backend development —
-              especially anything involving SQL, where I work with DB2 for i in production every day.
+              I'm a software engineer based in Madeira, currently focused on backend development. 
+              I have a strong interest in databases and data management,
+              especially anything involving SQL, since I work with DB2 for i in production every day.
             </p>
             <p>
-              In my free time I build for the web, mess around with game dev, and pick up new
-              languages and tools whenever something catches my eye. I like making things that work
-              cleanly under the hood and feel polished on top.
+              In my free time I build for the web, mess around with new technologies, and try to learn something new every day.
+              I always try to keep up with the latest trends in software development, and I'm an enthusiastic learner for anything related to programming.
             </p>
           </div>
           <div className="about-meta reveal-stagger">
