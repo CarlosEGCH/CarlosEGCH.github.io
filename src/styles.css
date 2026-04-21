@@ -434,6 +434,7 @@ section {
   padding: 24px;
   background: var(--bg-elev);
   border: 1px solid var(--border);
+  border-top: 2px solid var(--accent-primary);
   border-radius: var(--radius);
 }
 .about-card .label {
@@ -450,6 +451,9 @@ section {
   font-weight: 500;
 }
 .about-card .value .accent { color: var(--accent-warm); }
+/* icon + text row for stack cards */
+.about-card-w-icon { display: flex; align-items: center; gap: 10px; }
+.about-card-w-icon svg { color: var(--text-muted); flex-shrink: 0; }
 
 /* ---------- Experience ---------- */
 .exp-timeline {

@@ -1,3 +1,5 @@
+import { Icon } from '../icons.jsx'
+
 export default function About() {
   return (
     <section id="about">
@@ -21,19 +23,19 @@ export default function About() {
           <div className="about-meta reveal-stagger">
             <div className="about-card">
               <div className="label">Based in</div>
-              <div className="value">Madeira, <span className="accent">PT</span></div>
+              <div className="value">Madeira, <span className="accent">Portugal</span></div>
             </div>
             <div className="about-card">
-              <div className="label">Currently</div>
-              <div className="value">Core Banking Dev</div>
+              <div className="label">Role</div>
+              <div className="value">Software Developer at <span className="accent">Asseco PST</span></div>
             </div>
             <div className="about-card">
-              <div className="label">Focus</div>
-              <div className="value">Backend & SQL</div>
+              <div className="label">Daily stack</div>
+              <div className="value about-card-w-icon"><Icon.Database />DB2 for i <span className="accent">|</span> RPGLE</div>
             </div>
             <div className="about-card">
               <div className="label">Side stack</div>
-              <div className="value">React · Game Dev</div>
+              <div className="value about-card-w-icon"><Icon.Code />React <span className="accent">|</span> Typescript</div>
             </div>
           </div>
         </div>
