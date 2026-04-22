@@ -25,9 +25,10 @@ This is a **Vite + React** single-page portfolio site for Carlos Gomes. There is
 
 ### Design system
 
-All design tokens (colors, spacing, fonts, radii) are CSS custom properties on `:root` in `src/styles.css`. The two accent colors are:
+All design tokens (colors, spacing, fonts, radii) are CSS custom properties on `:root` in `src/styles.css`. The accent colors are:
 - `--accent-warm: #F5B700` (yellow — primary CTAs, active states, highlights)
 - `--accent-primary: #4B3BFF` (purple — chips, focus rings, secondary accents)
+- `--accent-green: #4ade80` (green — live/active status signals only)
 
 The `--density` variable scales section padding; `--accent-intensity` scales glow opacity. Both default to `1`.
 
@@ -53,6 +54,12 @@ And add `transition-delay: 0s !important` inside the `:hover` rule to cancel the
 Deployment is automated via `.github/workflows/deploy.yml`. Merging a PR into `main` triggers the workflow, which builds the site and pushes the output to the `gh-pages` branch. GitHub Pages serves from `gh-pages`.
 
 The CV is served from `public/cv.pdf` → `/cv.pdf` at runtime. Replace this file to update the downloadable CV.
+
+## Skills
+
+Custom skills live in `.claude/skills/`. After making changes to the codebase, check whether any skill's embedded knowledge has become stale and update it if so. Specifically:
+
+- **`visual-review`** — embeds the design token semantics (accent colors and their roles). Update its `SKILL.md` if tokens are added, removed, or their semantic role changes.
 
 ## Code style
 
