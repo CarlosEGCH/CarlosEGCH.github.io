@@ -1,13 +1,14 @@
 const EXPERIENCE = [
   {
     company: 'AssecoPST',
-    role: 'Core Banking Junior Developer',
+    role: 'Core Banking Developer',
     dates: '2023 — Present',
     location: 'Madeira, PT',
+    current: true,
     bullets: [
-      'Building and maintaining backend services on IBM i — APIs, business logic, and integrations for a core banking platform.',
+      'Building and maintaining backend services on IBM i; APIs, business logic, and integrations for a core banking platform.',
       'Writing and debugging RPGLE / SQLRPGLE against DB2 for i; covering features with unit tests before they ship.',
-      'Triaging user-reported tickets — bugs, edge cases, and improvements on existing functionality.',
+      'Triaging user-reported tickets; bugs, edge cases, and improvements on existing functionality.',
       'Designing 5250 screens that turn dense terminal flows into something users can actually move through quickly.',
     ],
     stack: ['IBM i', 'RPGLE', 'SQLRPGLE', 'DB2 for i', '5250'],
@@ -18,7 +19,8 @@ const EXPERIENCE = [
     dates: '2022 — Present',
     location: 'Remote',
     bullets: [
-      'Built websites for early clients during the final year of university — stack mostly React + Node.',
+      'Worked on multiple projects in university, including a social media app for students and a cybersecurity awareness app.',
+      'Built websites for early clients during the final year of university; stack mostly React + Node.',
       'Ongoing personal projects across web development, side tools, and small game-dev experiments.',
     ],
     stack: ['React', 'Node.js', 'TypeScript', 'PostgreSQL'],
@@ -37,11 +39,15 @@ export default function Experience() {
         <div className="exp-timeline reveal-stagger">
           {EXPERIENCE.map((e, i) => (
             <div key={i} className="exp-entry">
-              <div className="exp-card">
+              <div className={`exp-card${e.current ? ' exp-card--current' : ''}`}>
                 <div className="exp-head">
                   <div>
                     <span className="exp-company">{e.company}</span>
-                    <h3>{e.role}</h3>
+                    <h3>
+                      {e.role}
+                      {/* badge marks this as the active role so the glow has context */}
+                      {e.current && <span className="exp-badge">● Current</span>}
+                    </h3>
                   </div>
                   <div className="exp-meta">{e.dates} · {e.location}</div>
                 </div>

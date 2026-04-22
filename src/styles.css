@@ -9,6 +9,8 @@
   --accent-primary-soft: rgba(75, 59, 255, 0.18);
   --accent-warm: #F5B700;
   --accent-warm-soft: rgba(245, 183, 0, 0.18);
+  --accent-green: #4ade80;
+  --accent-green-soft: rgba(74, 222, 128, 0.10);
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.14);
   --radius: 18px;
@@ -282,8 +284,8 @@ section {
 }
 .hero-kicker .dot {
   width: 8px; height: 8px; border-radius: 999px;
-  background: #4ade80;
-  box-shadow: 0 0 12px #4ade80;
+  background: var(--accent-green);
+  box-shadow: 0 0 12px var(--accent-green);
   animation: pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse {
@@ -483,6 +485,30 @@ section {
   transition: border-color .2s ease;
 }
 .exp-card:hover { border-color: var(--border-strong); }
+
+/* featured card: warm glow draws the eye without overpowering the layout */
+.exp-card--current {
+  border-color: rgba(245, 183, 0, 0.35);
+  box-shadow: 0 0 32px rgba(245, 183, 0, 0.10), 0 0 8px rgba(245, 183, 0, 0.06);
+}
+.exp-card--current:hover { border-color: rgba(245, 183, 0, 0.6); }
+
+/* inline badge next to the role title */
+/* green matches the hero kicker dot — both signal "active/live" status */
+.exp-badge {
+  display: inline-block;
+  margin-left: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent-green);
+  background: var(--accent-green-soft);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: 20px;
+  padding: 2px 10px;
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+}
 .exp-head {
   display: flex;
   justify-content: space-between;

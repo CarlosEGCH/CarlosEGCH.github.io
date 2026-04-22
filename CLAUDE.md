@@ -25,9 +25,10 @@ This is a **Vite + React** single-page portfolio site for Carlos Gomes. There is
 
 ### Design system
 
-All design tokens (colors, spacing, fonts, radii) are CSS custom properties on `:root` in `src/styles.css`. The two accent colors are:
+All design tokens (colors, spacing, fonts, radii) are CSS custom properties on `:root` in `src/styles.css`. The accent colors are:
 - `--accent-warm: #F5B700` (yellow — primary CTAs, active states, highlights)
 - `--accent-primary: #4B3BFF` (purple — chips, focus rings, secondary accents)
+- `--accent-green: #4ade80` (green — live/active status signals only)
 
 The `--density` variable scales section padding; `--accent-intensity` scales glow opacity. Both default to `1`.
 
@@ -37,11 +38,28 @@ The `--density` variable scales section padding; `--accent-intensity` scales glo
 - `Rework` — active development branch
 - `gh-pages` — auto-generated built files, served by GitHub Pages (do not edit manually)
 
+### Known CSS gotcha — `.reveal-stagger` and hover transitions
+
+`.reveal-stagger.in > *:nth-child(n)` sets `transition-delay` on each child (0ms, 150ms, 300ms, 450ms) for the staggered entrance. These delays **persist permanently** after the reveal completes. Any hover transition on a staggered child will inherit them, causing a visible lag that increases per card.
+
+To work around this, scope hover rules through the parent to gain higher specificity:
+```css
+/* specificity (0,3,0) beats .reveal-stagger.in > *:nth-child(n) at (0,3,0) by cascade order */
+.parent-container > .child-card:hover { ... }
+```
+And add `transition-delay: 0s !important` inside the `:hover` rule to cancel the stagger delay on mouse-in. Note that mouse-out will still inherit the delay — a full fix requires either a JS timeout that sets a `data-revealed` attribute after the stagger completes (~1100ms), or converting the stagger to use `animation` instead of `transition`.
+
 ### Deployment
 
 Deployment is automated via `.github/workflows/deploy.yml`. Merging a PR into `main` triggers the workflow, which builds the site and pushes the output to the `gh-pages` branch. GitHub Pages serves from `gh-pages`.
 
 The CV is served from `public/cv.pdf` → `/cv.pdf` at runtime. Replace this file to update the downloadable CV.
+
+## Skills
+
+Custom skills live in `.claude/skills/`. After making changes to the codebase, check whether any skill's embedded knowledge has become stale and update it if so. Specifically:
+
+- **`visual-review`** — embeds the design token semantics (accent colors and their roles). Update its `SKILL.md` if tokens are added, removed, or their semantic role changes.
 
 ## Code style
 
