@@ -7,16 +7,16 @@ const PROJECTS = [
     stack: ['React', 'Node.js', 'MongoDB'],
     thumbClass: 'thumb-helpdesk',
     art: 'HD',
-    github: 'https://github.com/CarlosEGCH',
+    github: 'https://github.com/CarlosEGCH/weUMa',
     live: null,
   },
   {
-    name: 'Personal Portfolio v1',
-    desc: 'The first iteration of this portfolio — single-page site with anchor navigation, scroll animations, and a custom contact form.',
-    stack: ['HTML', 'CSS', 'JavaScript'],
+    name: 'ScamOverflow',
+    desc: 'A community-driven platform to share and discuss online scams, aiming to educate users and prevent fraud.',
+    stack: ['React', 'Node.js', 'MongoDB'],
     thumbClass: 'thumb-anon',
-    art: 'P1',
-    github: 'https://github.com/CarlosEGCH',
+    art: 'SO',
+    github: 'https://github.com/CarlosEGCH/ScamOverflow',
     live: null,
   },
 ]
@@ -28,7 +28,7 @@ export default function Projects() {
         <div className="section-head reveal">
           <span className="kicker">03 / Selected Work</span>
           <h2>Things I've shipped.</h2>
-          <p>A small selection of public projects — the rest live in private repos or as offline experiments.</p>
+          <p>A small selection of public projects. The rest live in private repos or as offline experiments.</p>
         </div>
         <div className="projects-grid reveal-stagger">
           {PROJECTS.map((p, i) => (
@@ -57,17 +57,18 @@ export default function Projects() {
               </div>
             </article>
           ))}
-          <a href="https://github.com/CarlosEGCH" target="_blank" rel="noreferrer" className="github-card" style={{ gridColumn: '1 / -1' }}>
+          <a href="https://github.com/CarlosEGCH" target="_blank" rel="noreferrer" className="github-strip" style={{ gridColumn: '1 / -1' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Icon.Github />
               </div>
               <div>
+                <div className="label">Open Source</div>
                 <h3>More on GitHub</h3>
                 <p>Side experiments, half-finished ideas, and small tools.</p>
               </div>
             </div>
-            <span className="arrow" style={{ marginLeft: 'auto' }}>github.com/CarlosEGCH <Icon.ArrowRight /></span>
+            <span className="arrow">github.com/CarlosEGCH <Icon.ArrowRight /></span>
           </a>
         </div>
 
