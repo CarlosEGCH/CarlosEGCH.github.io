@@ -1,8 +1,8 @@
 const EDU_STEPS = [
-  { step: 'Step 01', year: '2020', title: 'University of Madeira', desc: 'Started a Software Engineering degree. First contact with programming, mostly through Python.' },
-  { step: 'Step 02', year: '2021', title: 'DSA & Self-taught Web', desc: 'Took on Data Structures and Algorithms. Began learning web development on my own outside of class.' },
-  { step: 'Step 03', year: '2022', title: 'First Real Projects', desc: 'Shipped two websites for early clients. Went deeper on React and modern front-end tooling.' },
-  { step: 'Step 04', year: '2023', title: 'Graduated', desc: 'Finished the degree, levelled up my front-end skills, and stepped into the industry as a developer.' },
+  { step: 'years[0]', year: '2020', title: 'University of Madeira', desc: 'Started a Software Engineering degree. First contact with programming, mostly through Python.' },
+  { step: 'years[1]', year: '2021', title: 'DSA & Self-taught Web', desc: 'Took on Data Structures and Algorithms. Began learning web development on my own outside of class.' },
+  { step: 'years[2]', year: '2022', title: 'First Real Projects', desc: 'Shipped two websites for early clients. Went deeper on React and modern front-end tooling.' },
+  { step: 'years[3]', year: '2023', title: 'Graduated', desc: 'Finished the degree, levelled up my front-end skills, and stepped into the industry as a developer.' },
 ]
 
 export default function Education() {
